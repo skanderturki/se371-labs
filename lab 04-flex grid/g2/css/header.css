@@ -1,0 +1,38 @@
+
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+header img {
+  width: 20px;
+}
+
+.site-title {
+  display: flex;
+  align-items: center;
+}
+
+.site-title img {
+  flex-grow: 1;
+}
+
+.site-title h1 {
+  flex-grow: 7;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.menu a {
+  text-decoration: none;
+  border: solid 2px var(--bg-tertiary);
+  background-color: var(--bg-primary);
+  color: black;
+  padding: 3px 15px;
+  margin: 0 15px;
+}

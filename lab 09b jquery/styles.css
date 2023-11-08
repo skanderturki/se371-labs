@@ -1,0 +1,15 @@
+
+.course_row {
+  background-color: rgb(238, 225, 209);
+}
+
+.course_row:nth-child(2n) {
+  background-color: rgb(213, 200, 184);
+}
+
+.level_row {
+  background-color: rgb(185, 123, 48);
+  color: white;
+  text-align: center;
+  font-weight: 700;
+}

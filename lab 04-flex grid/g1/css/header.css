@@ -1,0 +1,52 @@
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.site-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.site-title h1 {
+  align-self: center;
+  flex-grow: 7;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.site-title img {
+  margin-left: 10px;
+  width: 8%;
+  align-self: center;
+  flex-grow: 1;
+}
+
+.menu {
+  align-self: center;
+}
+
+.menu a {
+  text-decoration: none;
+  border: solid 2px var(--bg-tertiary);
+  padding: 5px;
+  margin: 5px 15px;
+  background-color: var(--bg-secondary);
+  color: white;
+}
+
+@media screen and (max-width: 480px){
+  .site-title h1 {
+    font-size: 1rem;
+  }
+
+  .site-title img {
+    width: 4%;
+  }
+
+  .menu a {
+    font-size: 0.6rem;
+    margin: 3px 5px;
+  }
+}

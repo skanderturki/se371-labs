@@ -1,0 +1,40 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  align-items: center;
+  border: solid 2px var(--bg-tertiary);
+}
+
+.card img {
+  width: 50%;
+  margin: 10px;
+}
+
+.card h2 {
+  width: 70%;
+  margin: 10px;
+}
+
+.card button {
+  margin: 10px 0;
+  width: 30%;
+  background-color: var(--bg-primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 680px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

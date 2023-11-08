@@ -1,0 +1,52 @@
+header {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+header img {
+  flex-grow: 1;
+  width: 50px;
+}
+
+.site-title {
+  display: flex;
+  align-items: center;
+}
+
+.site-title h1 {
+  flex-grow: 8;
+  text-align: center;
+  width: 100%;
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 680px) {
+  .site-title h1 {
+    font-size: 3rem;
+  }
+  
+}
+
+@media screen and (min-width: 980px) {
+  .site-title h1 {
+    font-size: 3rem;
+  }
+  
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0 0 0;
+}
+
+.menu a {
+  text-decoration: none;
+  border: solid 2px var(--bg-tertiary);
+  background-color: var(--bg-secondary);
+  color: var(--bg-tertiary);
+  font-weight: 600;
+  padding: 3px 10px;
+  margin: 0 20px;
+}

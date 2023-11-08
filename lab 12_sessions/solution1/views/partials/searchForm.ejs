@@ -1,0 +1,19 @@
+<script>
+  function searchChairs(){
+    e.preventDefault();
+    console.log(e.target)
+  }
+</script>
+
+<form action="/" method="post" class="">
+  <h2 class="">Search for chairs by type:</h2>
+  <select name="chairtype" id="chairtype" class="">
+    <option value="0" class="">All types</option>
+    <option value="1" class="">Stand chair</option>
+    <option value="2" class="">Gaming chair</option>
+    <option value="3" class="">Static chair</option>
+    <option value="4" class="">Mobile office chair</option>
+  </select>
+  <button onClick="searchChairs(e)">Search</button>
+
+</form>

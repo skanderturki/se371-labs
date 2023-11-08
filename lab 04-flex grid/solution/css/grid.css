@@ -1,0 +1,51 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: var(--bg-tertiary);
+  margin: 20px;
+}
+
+.card img {
+  width: 70%;
+  margin: auto;
+}
+
+.card h2, .card p {
+  text-align: center;
+  padding: 10px;
+}
+
+.cards-grid {
+  margin: auto;
+  width: 90%;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Cards Button: START */
+.card button {
+  width: 60%;
+  align-self: flex-end;
+  padding: 12px 14px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 10px;
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.card button:hover, .card button:active {
+  background-color: initial;
+  color: #FF4742;
+}
+
+.card button:active {
+  opacity: .5;
+}
+/* Cards Button: END */

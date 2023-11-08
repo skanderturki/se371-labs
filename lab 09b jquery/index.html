@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- general meta tags -->
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- site specific tags -->
+  <title>Lab 09b JQuery</title>
+  <!-- style sheets -->
+  <link rel="stylesheet" href="css-reset.css">
+  <link rel="stylesheet" href="styles.css">
+  <!-- javascript files -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Lab 09b JQuery</h1>
+  </header>
+  <main>
+    <article id="data_section">
+      <table class="table_curriculum">
+        <thead>
+          <tr class="table_curriculum_header">
+            <th>name</th>
+            <th>description</th>
+            <th>code</th>
+            <th>credit</th>
+            <th>type</th>
+        <tbody id="table_curriculum_body">
+      </table>
+      <br>
+      <form method="update" action="/update-curriculum">
+        <fieldset>
+        <legend>Update Course Description</legend>
+          <div>
+            <input type="text" name="code" id="code"  required>
+          </div>
+          <div>
+            <label for="description">Enter new description:</label>
+            <input type="text" name="description" id="description" required>
+          </div><br>
+          <input type="submit" value="Update">
+        </fieldset>
+      </form>
+    </article>
+  </main>
+  <footer>
+    
+  </footer>
+  <script src="data.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

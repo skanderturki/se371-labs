@@ -1,0 +1,21 @@
+<%- include('./partials/header') %>
+    <main class="main">
+      <section class="">
+        <%- include('./partials/search_chairs_form') %>
+      </section>
+      <section class="cards_section">
+        <% if(chairs){ %>
+          <% chairs.forEach((chair) => { %>
+            <article class="card">
+              <img src="<%= chair.img %>" alt="<%= chair.alt %>">
+              <h2><%= chair.name %></h2>
+              <p>(<%= chair.type %>)</p>
+              <p><%= chair.price %> SAR</p>
+              <button>Buy</button>
+            </article>
+          <% }); %>
+        <% } %>
+      </section>
+    </main>
+<%- include('./partials/footer') %>
+

@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+  --bg-primary: rgb(240, 223, 205);
+  --bg-secondary: rgb(161, 175, 244);
+  --bg-tertiary: rgb(35, 59, 154);
+}
+
+html {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: black;
+}

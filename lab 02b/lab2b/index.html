@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- general meta tags -->
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- site specific tags -->
+  <title>Lab 2b - HTML5 Forms</title>
+  <style>
+    input:valid {
+        background-color: palegreen;
+    }
+    
+    input:invalid {
+        background-color: lightpink;
+    }
+  </style>    
+</head>
+<body>
+  <header>
+    <h1>Lab 2b HTML5 Forms</h1>
+  </header>
+  <main>
+    <section>
+      <form method="post" action="/register">
+        <fieldset>
+        <legend>Contact Us Today!</legend>
+          <div>
+            <label for="_fname">First Name</label>
+            <input id="_fname" type="text" name="fname" pattern="[a-zA-Z]{1,30}" required>
+          </div>
+          <div>
+            <label for="_lname">Last Name</label>
+            <input id="_lname" type="text" name="lname" pattern="[a-zA-Z]{1,30}" required>
+          </div>
+          <div>
+            <label for="_email">Email</label>
+            <input id="_email" type="email" name="email" required>
+          </div>
+          <div>
+            <label for="_phone">Phone #</label>
+            <input id="_phone" type="text" name="phone" pattern="[0-9]{10,14}" title="10 to 14 digits phone number" required>
+          </div>
+          <div>
+            <label for="_address">Address</label>
+            <input id="_address" type="text" name="address" required>
+          </div>
+          <div>
+            <label for="_city">City</label>
+            <input id="_city" type="text" name="city" required>
+          </div>
+          <div>
+            <label for="_region">Region</label>
+            <select id="_region" name="region">
+              <option value="-1">Please select a region...</option>
+              <option value="1">Mecca</option>
+              <option value="2">Riyadh</option>
+              <option value="3">Eastern Region</option>
+              <option value="4">Asir</option>
+            </select>
+          </div>
+          <div>
+            <label for="_zip">Zip Code</label>
+            <input id="_zip" type="text" name="zip" pattern="[0-9]{1,6}" required>
+          </div>
+          <div>
+            <label for="_domain" >Website or Domain Name</label>
+            <input id="_domain" type="text" name="domain">
+          </div>
+          <div>
+            <label>Do You Have Hosting?</label>
+            <input id="_hosting_yes" type="radio" name="has_hosting"><label for="_hosting_yes">Yes</label>
+            <input id="_hosting_no" type="radio" name="has_hosting" checked><label for="_hosting_no">No</label>
+          </div>
+          <div>
+            <label for="_description">Project Description</label>
+            <textarea id="_description" name="description" cols="30" rows="5"></textarea>
+          </div>
+          <button>Send</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+  <footer>
+    
+  </footer>
+</body>
+</html>

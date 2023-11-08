@@ -1,0 +1,21 @@
+<%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <main class="main">
+      <section class="cards_section">
+
+        <% chairs.forEach( (chair)=> { %>
+          <article class="card">
+            <img src="<%= chair.img %>" alt="<%= chair.alt %>">
+            <h2><%= chair.name %></h2>
+            <p><%= chair.price %> SAR</p>
+            <button>Buy</button>
+          </article>
+        <% }) %>
+
+      </section>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
+

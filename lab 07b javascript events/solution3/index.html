@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- general meta tags -->
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- site specific tags -->
+  <title>Lab 07b</title>
+  <!-- style sheets -->
+  <link rel="stylesheet" href="css/css-reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Lab 07b: Forms and Events</h1>
+    <nav>
+      
+    </nav>
+  </header>
+  <main>
+    <section>
+      <article>
+        <form id="registration_form" method="post" action="/register">
+          <fieldset>
+          <legend>Registration:</legend>
+          <hr>
+            <div>
+              <label for="firstName">First Name:</label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                required
+                pattern="[a-zA-Z]{2,20}"
+                title="2 to 20 letters" /><span id="firstName_err" class="error"></span>
+            </div>
+            <div>
+              <label for="lastName">Last Name:</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                required
+                pattern="[a-zA-Z]{2,20}"
+                title="2 to 20 letters" /><span id="lastName_err" class="error"></span>
+            </div>
+            <div>
+              <label for="email">E-Mail:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                title="An email" /><span id="email_err" class="error"></span>
+            </div>
+            
+            <hr>
+            <div>
+              <label for="address">Address:</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                required
+                size="30"
+                pattern="[a-zA-z]{10,30}"
+                title="Address of no more than 30 characters" /><span id="address_err" class="error"></span>
+            </div>
+            <div>
+              <label for="city">City:</label>
+              <input
+                type="text"
+                id="city"
+                name="city"
+                required
+                size="20"
+                pattern="[a-zA-Z ]{3,20}"
+                title="Address of no more than 30 characters" /><span id="city_err" class="error"></span>
+            </div>
+            <div>
+              <label for="country">Country:</label>
+              <select name="country" id="country" required>
+                  <option value="1" data-code="+966" selected>KSA</option>
+                  <option value="2" data-code="+968">Oman</option>
+                  <option value="3" data-code="+965">Kuwait</option>
+                  <option value="4" data-code="+20">Egypt</option>
+                  <option value="5" data-code="+962">Jordan</option>
+                  <option value="6" data-code="+963">Syria</option>
+                  <option value="7" data-code="+961">Lebanon</option>
+              </select>
+            </div>
+            <div>
+              <label for="phoneNumber">Phone #:</label>
+              <span id="country_code">+966</span>
+              <input
+                type="text"
+                id="phoneNumber"
+                name="phoneNumber"
+                required
+                pattern="[0-9]{9,11}"
+                title="a phone number of 9 to 11 digits" /><span id="phoneNumber_err" class="error"></span>
+            </div>
+            <hr>
+            <p>Do you want to become a voting member?</p>
+            <div>
+              <input type="radio" id="votingNo" name="voting" value="0" checked>
+              <label class="label_radio" for="votingNo">No</label>
+            </div>
+            <div>
+              <input type="radio" id="votingYes" name="voting" value="1">
+              <label class="label_radio" for="votingYes">Yes</label>
+            </div>
+            <div id="motivations_block" class="hide">
+              <label for="motivations">Tell us about your motivations to become a voting member....</label><br>
+              <textarea 
+                id="motivations" 
+                name="motivations" 
+                rows="4" 
+                cols="50">
+              </textarea>
+            </div>
+            <input type="submit">
+            <input type="reset">
+          </fieldset>
+        </form>
+      </article>
+    </section>
+  </main>
+<script src="index.js"></script>
+</body>
+</html>
