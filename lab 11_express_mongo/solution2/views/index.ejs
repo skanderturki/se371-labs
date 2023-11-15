@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Product Data Management</title>
+    <link rel="stylesheet" href="./css/mystyles.css" />
+  </head>
+
+  <body>
+    <h1>Dashboard: Products</h1>
+    <h2>Products Management</h2>
+
+    <div id="formContainer">
+      <label for="codeInput">Code:</label>
+      <input type="text" id="codeInput" name="codeInput" placeholder="Enter the product's code" />
+      <label for="nameInput">Name:</label>
+      <input type="text" id="nameInput" name="nameInput" placeholder="Enter the product's name" />
+      <label for="descInput">Description:</label>
+      <input type="text" id="descInput" name="descInput" placeholder="Enter a description of the product" />
+      <label for="quantityInput">Quantity:</label>
+      <input type="text" id="quantityInput" name="quantityInput" pattern="[0-9]{1,20}" placeholder="Enter quantity" />
+      <label for="priceInput">Price:</label>
+      <input type="text" id="priceInput" name="priceInput" pattern="[0-9]+/.[0-9]+" placeholder="Enter the unit's price" />
+      <button onclick="addData()">Add</button>
+    </div>
+    <table id="outputTable">
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+    </table>
+    <script>
+      async function addData() {
+        // Get input values
+        let code = document.getElementById("codeInput").value;
+        let name = document.getElementById("nameInput").value;
+        let description = document.getElementById("descInput").value;
+        let quantity = document.getElementById("quantityInput").value;
+        let price = document.getElementById("priceInput").value;
+
+        // Insert data into cells of the new row
+        const response = await fetch(`http://localhost:3000/v1/products/code/${code}/name/${name}/description/${description}/quantity/${quantity}/price/${price}`, 
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          }
+        });
+
+        // Clear input fields
+        clearInputs();
+        loadData();
+      }
+
+      async function loadData() {
+        
+        // Get the table and insert a new row at the end
+        let table = document.getElementById("outputTable");
+
+
+        // Insert data into cells of the new row
+        const response = await fetch(`http://localhost:3000/v1/products`, 
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          }
+        });
+        const data = await response.json();
+        console.log(data);
+        data.forEach(product => {
+          let newRow = table.insertRow(table.rows.length);
+          newRow.insertCell(0).innerHTML = product.code;
+          newRow.insertCell(1).innerHTML = product.name;
+          newRow.insertCell(2).innerHTML = product.description;
+          newRow.insertCell(3).innerHTML = product.quantity;
+          newRow.insertCell(4).innerHTML = product.price;
+          newRow.insertCell(5).innerHTML = 
+            `<button onclick="updateData("${product.code}")">Update</button>` +
+            `<button onclick="deleteData("${product.code}")">Delete</button>`;
+
+        });
+        
+        // Clear input fields
+        clearInputs();
+      }
+
+      function updateData(button) {
+        // Get the parent row of the clicked button
+        let row = button.parentNode.parentNode;
+
+        // Get the cells within the row
+        let codeCell = row.cells[0];
+        let nameCell = row.cells[1];
+        let descriptionCell = row.cells[2];
+        let quantityCell = row.cells[3];
+        let priceCell = row.cells[4];
+
+        document.getElementById("codeInput").value = codeCell.value;
+        document.getElementById("nameInput").value = nameCell.value;
+        document.getElementById("descInput").value = descriptionCell.value;
+        document.getElementById("quantityInput").value = quantityCell.value;
+        document.getElementById("priceInput").value = priceCell.value;
+      }
+      
+      function deleteData(button) {
+        // Get the parent row of the clicked button
+        let row = button.parentNode.parentNode;
+
+        // Remove the row from the table
+        row.parentNode.removeChild(row);
+      }
+      function clearInputs() {
+        // Clear input fields
+        document.getElementById("codeInput").value = "";
+        document.getElementById("nameInput").value = "";
+        document.getElementById("descInput").value = "";
+        document.getElementById("quantityInput").value = "";
+        document.getElementById("priceInput").value = "";
+      }
+    </script>
+  </body>
+</html>

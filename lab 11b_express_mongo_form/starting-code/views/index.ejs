@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Companies Data Management</title>
+    <link rel="stylesheet" href="./css/mystyles.css" />
+  </head>
+
+  <body>
+    <h1>Dashboard: Companies</h1>
+    <h2>Companies Management</h2>
+
+    <div id="formContainer">
+      <form action="/v1/companies" method="POST">
+        <label for="codeInput">Code:</label>
+        <input type="text" id="codeInput" name="code" placeholder="Enter the company's code" />
+        <label for="nameInput">Name:</label>
+        <input type="text" id="nameInput" name="name" placeholder="Enter the company's name" />
+        <label for="addressInput">Address:</label>
+        <input type="text" id="addressInput" name="address" placeholder="Enter the company's address" />
+        <label for="descInput">Description:</label>
+        <input type="text" id="descInput" name="description" placeholder="Enter a description of the company" />
+        <label for="capitalInput">Capital:</label>
+        <input type="text" id="capitalInput" name="capital" pattern="[0-9]{1,20}" placeholder="Enter the company's capital" />
+        <label for="ownerInput">Owner:</label>
+        <input type="text" id="ownerInput" name="owner" pattern="[a-zA-Z ]{2, 50}" placeholder="Enter the company's owner fullname" />
+        <div>
+          <button formmethod="POST">Add</button>
+        </div>
+      </form>
+    </div>
+    <table id="outputTable">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Description</th>
+          <th>Capital</th>
+          <th>Owner</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+       
+      </tbody>
+    </table>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
