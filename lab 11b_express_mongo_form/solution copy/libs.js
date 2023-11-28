@@ -1,0 +1,1 @@
+const swal = require('sweetalert');
