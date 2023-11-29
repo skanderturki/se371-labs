@@ -32,3 +32,27 @@ input[type="submit"] {
 h1 {
   color: green;
 }
+
+.message {
+  color: white;
+  font-weight: 700;
+  animation-name: fadeout-green;
+  animation-duration: 5s;
+}
+
+@keyframes fadeout-green {
+  from {color: green;}
+  to {color: white;}
+}
+
+.error {
+  color: white;
+  font-weight: 700;
+  animation-name: fadeout-red;
+  animation-duration: 5s;
+}
+
+@keyframes fadeout-red {
+  from {color: red;}
+  to {color: white;}
+}

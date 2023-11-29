@@ -1,20 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Books Management</title>
-    <link rel="stylesheet" href="./css/mystyles.css" />
-  </head>
-
-  <body>
-    <h1>Dashboard: <%= title %></h1>
+<%- include('./partials/header.ejs') %>
+   
 
     <div id="formContainer">
-      <form action="" method="">
+      <% if(error) { %>
+        <p class="error"><%= error %></p>
+      <% } %>
+      <% if(message) { %>
+        <p class="message"><%= message %></p>
+      <% } %>
+      <form action="/books/v1/" method="post">
         <label for="codeInput">Code:</label>
         <input type="text" id="codeInput" name="code" placeholder="Enter the book's code" />
         <label for="titleInput">Name:</label>
         <input type="text" id="titleInput" name="title" placeholder="Enter the book's title" />
-        <label for="authorInput">Address:</label>
+        <label for="authorInput">Author:</label>
         <input type="text" id="authorInput" name="author" placeholder="Enter the book's author full name" />
         <div>
           <input type="submit" value="Save">

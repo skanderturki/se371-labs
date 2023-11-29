@@ -1,0 +1,21 @@
+<%- include('./partials/header.ejs') %>
+
+    <div id="formContainer">
+      <% if(error) { %>
+        <p class="error"><%= error %></p>
+      <% } %>
+      <form action="/books/v1/" method="">
+        <label for="titleInput">Search by title:</label>
+        <input type="text" id="titleInput" name="title" placeholder="Enter part of the book's title" />
+        <div>
+          <input type="submit" value="Search">
+        </div>
+      </form>
+    </div>
+    <div>
+      <table id="books_table">
+
+      </table>
+    </div>
+  </body>
+</html>

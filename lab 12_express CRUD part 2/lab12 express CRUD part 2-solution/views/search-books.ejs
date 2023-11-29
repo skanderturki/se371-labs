@@ -1,0 +1,40 @@
+<%- include('./partials/header.ejs') %>
+
+    <div id="formContainer">
+      <% if(error) { %>
+        <p class="error"><%= error %></p>
+      <% } %>
+      <form action="/books/v1/" method="get">
+        <label for="titleInput">Search by title:</label>
+        <input type="text" id="titleInput" name="title" placeholder="Enter part of the book's title" />
+        <div>
+          <input type="submit" value="Search">
+        </div>
+      </form>
+    </div>
+    <div>
+      <table id="books_table">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Title</th>
+            <th>Author</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if(books && books.length > 0){ %>
+            <% books.forEach(book => { %>
+              <tr>
+                <td><%= book.code %></td>
+                <td><%= book.title %></td>
+                <td><%= book.author %></td>
+              </tr>
+            <% }); %>
+          <% } else { %>
+            <tr><td colspan="3">No books to display</td></tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
