@@ -1,24 +1,3 @@
-/* Header Rules: Start */
-header {
-  font-family: 'Cinzel', serif;
-  padding: 50px 100px 10px 100px;
-  background-color: var(--bg-main);
-}
-
-header div{
-  display: flex;
-  flex-direction: row;
-  background-color: var(--bg-main);
-}
-
 header img {
-  width: 10%;
+  width: 100px;
 }
-
-header h1 {
-  font-style: italic;
-  font-size: 3rem;
-  flex-basis: 90%;
-  text-align: center;
-}
-/* Header Rules: End */

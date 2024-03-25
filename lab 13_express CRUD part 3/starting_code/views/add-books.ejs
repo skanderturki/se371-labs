@@ -1,0 +1,24 @@
+<%- include('./partials/header.ejs') %>
+   
+
+    <div id="formContainer">
+      <% if(error) { %>
+        <p class="error"><%= error %></p>
+      <% } %>
+      <% if(message) { %>
+        <p class="message"><%= message %></p>
+      <% } %>
+      <form action="/books/v1/" method="post">
+        <label for="codeInput">Code:</label>
+        <input type="text" id="codeInput" name="code" placeholder="Enter the book's code" />
+        <label for="titleInput">Title:</label>
+        <input type="text" id="titleInput" name="title" placeholder="Enter the book's title" />
+        <label for="authorInput">Author:</label>
+        <input type="text" id="authorInput" name="author" placeholder="Enter the book's author full name" />
+        <div>
+          <input type="submit" value="Save">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

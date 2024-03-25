@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --bg-secondary-color: #d0c4f0;
+}
+
+html {
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+legend {
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+form {
+  font-size: 0.9rem;
+  background-color: var(--bg-secondary-color);
+  margin: 20px;
+  padding: 20px;
+}
+
+label {
+  display: block;
+}
+
+.label_radio {
+  display: inline;
+}
+
+input, select, textarea  {
+  margin-bottom: 10px;
+  padding: 5px 2px;
+}
+
+.separator {
+  border-bottom: solid 1px darkcyan;
+  margin: 10px 0;
+}
+
+button, input[type="reset"], input[type="submit"] {
+  width: 100px;
+  border: 0;
+  border-radius: 5px;
+}
+
+.action-buttons {
+  font-weight: 800;
+}

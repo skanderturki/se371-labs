@@ -1,6 +1,9 @@
 # word temp files
 ~$*
 
+# solutions
+*/solution/
+
 # Logs
 logs
 *.log
@@ -69,8 +72,10 @@ web_modules/
 # Optional REPL history
 .node_repl_history
 
-# Output of 'npm pack'
+# any archive
 *.tgz
+*.rar
+*.zip
 
 # Yarn Integrity file
 .yarn-integrity

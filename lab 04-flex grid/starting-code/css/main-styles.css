@@ -6,9 +6,12 @@
   --bg-tertiary: palegoldenrod;
 }
 
-body {
+html {
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
-  background-color: var(--bg-secondary);
   color: black;
+}
+
+body {
+  background-color: var(--bg-secondary);
 }

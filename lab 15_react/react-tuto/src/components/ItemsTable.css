@@ -1,0 +1,5 @@
+
+.items-table th {
+  background-color: var(--bg-primary-color);
+  color: white;
+}

@@ -1,40 +1,56 @@
+
+.books-grid {
+  display: grid;
+  width: 100%;
+}
+
 .card {
   display: flex;
+  width: 95%;
   flex-direction: column;
   margin: 20px;
-  align-items: center;
-  border: solid 2px var(--bg-tertiary);
+  background-color: var(--bg-secondary);
+  border: solid 1px black;
 }
 
 .card img {
-  width: 50%;
-  margin: 10px;
+  width: 70%;
 }
 
-.card h2 {
-  width: 70%;
-  margin: 10px;
+.card * {
+  margin: 20px;
+  padding: 10px;
 }
 
 .card button {
-  margin: 10px 0;
-  width: 30%;
-  background-color: var(--bg-primary);
+  margin-top: auto;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
+
+/**
+* For small screens ( < 679px )
+**/
+@media screen and (max-width: 679px) {
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-@media screen and (min-width: 680px) {
-  .grid {
+/**
+* For medium screens ( 680px -> 979px )
+**/
+@media screen and (min-width: 680px) and (max-width: 979px) {
+  .books-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
+
+/**
+* For extra large screens ( >= 980px )
+**/
 @media screen and (min-width: 980px) {
-  .grid {
+  .books-grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }

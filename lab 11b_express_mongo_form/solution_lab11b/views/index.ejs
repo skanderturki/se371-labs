@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Companies Data Management</title>
+    <link rel="stylesheet" href="/css/mystyles.css" />
+  </head>
+
+  <body>
+    <h1>Dashboard: Companies</h1>
+    <h2>Companies Management</h2>
+
+    <div id="formContainer">
+      <form action="/companies/v1/" method="POST">
+        <label for="codeInput">Code:</label>
+        <input type="text" id="codeInput" name="code" placeholder="Enter the company's code" />
+        <label for="nameInput">Name:</label>
+        <input type="text" id="nameInput" name="name" placeholder="Enter the company's name" />
+        <label for="addressInput">Address:</label>
+        <input type="text" id="addressInput" name="address" placeholder="Enter the company's address" />
+        <label for="descInput">Description:</label>
+        <input type="text" id="descInput" name="description" placeholder="Enter a description of the company" />
+        <label for="capitalInput">Capital:</label>
+        <input type="text" id="capitalInput" name="capital" pattern="[0-9]{1,20}" placeholder="Enter the company's capital" />
+        <label for="ownerInput">Owner:</label>
+        <input type="text" id="ownerInput" name="owner" pattern="[a-zA-Z ]{2, 50}" placeholder="Enter the company's owner fullname" />
+        <div>
+          <input type="submit">Add</input>
+        </div>
+      </form>
+    </div>
+    <table id="outputTable">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Description</th>
+          <th>Capital</th>
+          <th>Owner</th>
+        </tr>
+      </thead>
+      <tbody>
+       <% if(companies && companies.length > 0){ %>
+        <% companies.forEach(company => { %>
+          <tr>
+            <td><%= company.code %></td>
+            <td><%= company.name %></td>
+            <td><%= company.address %></td>
+            <td><%= company.description %></td>
+            <td><%= company.capital %></td>
+            <td><%= company.owner %></td>
+            <td><button onclick="deleteCompany(this)" data-companyid="<%= company.id %>">Delete</button></td>
+            <td><button onclick="updateCompany(this)" data-companyid="<%= company.id %>">Update</button></td>
+          </tr>
+        <% }) %>
+       <% } else { %>
+        <tr><td colspan="6">No data to display</td></tr>
+       <% } %>
+      </tbody>
+    </table>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

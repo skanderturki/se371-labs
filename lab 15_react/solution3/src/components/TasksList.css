@@ -1,0 +1,37 @@
+.add-task-section {
+  margin: 10px;
+}
+
+.add-task-section * {
+  margin: 10px;
+  padding: 10px;
+  font-weight: 600;
+  font-size: x-large;
+}
+
+.tasks-list-section {
+  margin: 10px;
+}
+
+td, th {
+  border: solid 1px var(--bg-primary);
+  text-align: left;
+}
+
+td {
+  padding: 8px;
+}
+
+th {
+  padding: 12px 8px;
+  background-color: var(--bg-primary);
+  color:white;
+}
+
+tr:nth-child(2n) {
+  background-color: gainsboro;
+}
+
+tr:hover {
+  background-color: blanchedalmond;
+}

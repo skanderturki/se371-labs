@@ -1,0 +1,33 @@
+<%- include('./partials/header') %>
+    <main class="main">
+      <section class="">
+        <form action="/" method="POST" class="">
+          <label for="select_type" class="">Search by type:</label>
+          <select name="chair_type" id="select_type" class="">
+            <option value="0" class="">All</option>
+            <option value="1" class="">Mobile office chair</option>
+            <option value="2" class="">Stand chair</option>
+            <option value="3" class="">Static chair</option>
+            <option value="4" class="">Gaming chair</option>
+          </select>
+          <button class="">Search</button>
+        </form>
+      </section>
+      <section class="cards_section">
+        <% if(err){ %>
+          <h2><%= err %></h2>
+        <% } %>
+        <% if(chairs){ %>
+          <% chairs.forEach((chair) => { %>
+            <article class="card">
+              <img src="<%= chair.img %>" alt="<%= chair.alt %>">
+              <h2><%= chair.name %></h2>
+              <p><%= chair.price %> SAR</p>
+              <button onclick="addToCart(this)" data-chairid="<%= chair.id %>">Add To Cart</button>
+            </article>
+          <% }); %>
+        <% } %>
+      </section>
+    </main>
+<%- include('./partials/footer') %>
+

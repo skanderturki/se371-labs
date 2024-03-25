@@ -1,71 +1,68 @@
+.books-grid {
+  display: grid;
+}
 
 .card {
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: var(--bg-secondary);
-  margin: 30px;
-  padding: 20px;
+  border: solid 1px black;
+  align-items: center;
+  margin: 20px;
+  justify-self: center;
 }
 
 .card img {
-  width: 50%;
-  border: solid 3px var(--bg-tertiary);
-  margin: 20px 0;
+  width: 70%;
 }
 
-.card h2 {
-  font-size: 1.2rem;
-} 
-
-.card p {
-  margin: 10px;
-  font-size: 1rem
+.card * {
+  margin: 20px;
+  padding: 10px;
 }
 
 .card button {
-  background-color: var(--bg-primary);
-  width: 30%;
-  font-size: 1.2rem;
-  border: solid 2px var(--bg-tertiary);
+  background-color: var(--bg-main);
+  width: 50%;
+  font-weight: 800;
+  border: 0;
+  border-radius: 5px;
   margin-top: auto;
 }
 
-.card button:hover {
-  border: solid 5px var(--bg-tertiary);
-  font-weight: 700;
+/**
+* For small screens ( < 679px )
+**/
+@media screen and (max-width: 679px) {
+  body {
+    min-width: 100vw;
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    width: 50%;
+  }
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-@media screen and (min-width: 680px) {
-  .grid {
+/**
+* For large screens ( 680px -> 979px )
+**/
+@media screen and (min-width: 680px) and (max-width: 979px)  {
+  .books-grid {
     grid-template-columns: 1fr 1fr;
   }
-
-  .card h2 {
-    font-size: 1.2rem;
-  } 
-  
-  .card p {
-    font-size: 1rem
-  }
-  
 }
 
+/**
+* For extra large screens ( >= 980px )
+**/
 @media screen and (min-width: 980px) {
-  .grid {
+  .books-grid {
     grid-template-columns: 1fr 1fr 1fr;
-  }
-  
-  .card h2 {
-    font-size: 1.4rem;
-  } 
-  
-  .card p {
-    font-size: 1.2rem
   }
 }
