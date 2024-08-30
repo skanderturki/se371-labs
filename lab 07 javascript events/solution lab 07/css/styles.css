@@ -26,15 +26,19 @@ input:valid {
 }
 
 input:invalid {
-  background-color: lightpink;
+  background-color: rgb(235, 216, 219);
 }
 
 input, textarea, select {
   border: 0;
-  margin: auto;
+  margin: 5px auto;
   padding: 7px 5px;
   border-radius: 2px;
   width: 95%;
+}
+
+#phoneNumber {
+  width: auto;
 }
 
 input[type="submit"], input[type="reset"], button {
@@ -71,6 +75,15 @@ p {
   color: red;
 }
 
-.red_border {
-  border: solid 2px red;
+.hide {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
+
+/* !important allows to give highest priority to this rule, without it input:invalid will take over */
+.focus {
+  background-color: rgb(236, 180, 101) !important; 
 }

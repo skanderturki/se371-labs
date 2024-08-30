@@ -1,0 +1,28 @@
+
+.grey {
+  background-color: rgba(205, 213, 234, 0.333);
+}
+
+.border {
+  border: 2px solid blueviolet;
+}
+
+.table_header {
+  background-color: rgba(174, 146, 176, 0.333);
+}
+
+.level_row {
+  background-color: rgba(37, 62, 123, 0.333);
+  text-align: center;
+  font-weight: 700;
+}
+
+.course_row {
+  background-color: rgba(134, 144, 169, 0.333);
+  font-weight: 400;
+}
+
+.row_selected {
+  background-color: rgba(57, 69, 98, 0.333);
+  font-weight: 500;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IDEA chairs Store</title>
+      <!-- style sheets -->
+    <link rel="stylesheet" href="/css/css-reset.css">
+    <link rel="stylesheet" href="/css/main-styles.css">
+
+  </head>
+  <body>
+    <header>
+      <h1>IDEA chairs Store</h1>
+    </header>
+    <main class="main">
+      <section class="cards_section">
+        <% if(chairs !== "undefined" && chairs && chairs.length > 0) { %>
+          <% chairs.forEach( (obj)=>{ %>
+            <article class="card">
+              <img src="<%= obj.img %>" alt="<%= obj.alt %>">
+              <h2><%= obj.name %></h2>
+              <p><%= obj.price %> SAR</p>
+              <button>Buy</button>
+            </article>
+          <% }) %>
+        <% } %>
+      </section>
+    </main>
+    <footer>
+      <p><a href="/">Home</a></p>
+      <p>@ IDEA Corporation, 2022</p>
+      <p><a href="/about">About the company</a></p> 
+    </footer>
+  </body>
+</html>
+

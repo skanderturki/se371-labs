@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Companies Data Management</title>
+    <link rel="stylesheet" href="./css/mystyles.css" />
+  </head>
+
+  <body>
+    <h1>Dashboard: Companies</h1>
+    <h2>Companies Management</h2>
+
+    <div id="formContainer">
+      <form action="/v1/companies" method="POST">
+        <label for="code">Code:</label>
+        <input type="text" id="code" name="code" placeholder="Enter the company's code" />
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter the company's name" />
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" placeholder="Enter the company's address" />
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" placeholder="Enter a description of the company" />
+        <label for="capital">Capital:</label>
+        <input type="text" id="capital" name="capital" pattern="[0-9]{1,20}" placeholder="Enter the company's capital" />
+        <label for="owner">Owner:</label>
+        <input type="text" id="owner" name="owner" pattern="[a-zA-Z ]{2,50}" placeholder="Enter the company's owner fullname" />
+        <div>
+          <input type="button" onclick="add_company()" value="Add"/>
+        </div>
+      </form>
+    </div>
+    <p class="error">
+      <% if(error) { %>
+        error
+      <% } %>
+    </p>
+    <table id="outputTable">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Description</th>
+          <th>Capital</th>
+          <th>Owner</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if(companies && companies.length > 0){ %>
+          <% companies.forEach(company => { %>
+            <tr>
+              <td><%= company.code %></td>
+              <td id="name_td" contenteditable="true"><%= company.name %></td>
+              <td id="address_td" contenteditable="true"><%= company.address %></td>
+              <td id="description_td" contenteditable="true"><%= company.description %></td>
+              <td id="capital_td" contenteditable="true"><%= company.capital %></td>
+              <td id="owner_td" contenteditable="true"><%= company.owner %></td>
+              <td>
+                <button onclick="update_company('<%= company.code %>')">UPDATE</button>
+                <button id="deleteButton" onclick="delete_company('<%= company.code %>')">DELETE</button>
+              </td>
+            </tr>
+          <% }); %>
+        <% } else { %>
+          <tr>
+            <td colspan="7">No data to display.</td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <script src="./js/index.js"></script>
+    <script src="./js/sweetalert.min.js"></script>
+  </body>
+</html>

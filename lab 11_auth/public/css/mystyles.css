@@ -1,0 +1,92 @@
+:root {
+  --main-color: hsl(200, 100%, 50%);
+  --secondary-color: hsl(200, 100%, 40%);
+}
+
+body { 
+  margin: 4rem; 
+} 
+
+#formContainer { 
+  margin-bottom: 20px; 
+} 
+
+label { 
+  display: block; 
+  margin-top: 10px; 
+} 
+
+input, 
+textarea { 
+  width: 300px; 
+  padding: 8px; 
+  margin-top: 5px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+} 
+
+button, input[type="submit"] { 
+  background-color: var(--main-color);
+  font-size: 1.2rem;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin: 10px; 
+  border: none; 
+  cursor: pointer; 
+} 
+
+button:hover, input[type="submit"]:hover { 
+  background-color: var(--secondary-color); 
+} 
+
+#deleteButton {
+  background-color: rgb(227, 145, 22); 
+}
+
+#deleteButton:hover { 
+  background-color: rgb(227, 118, 22); 
+} 
+
+table { 
+  border-collapse: collapse; 
+  margin-bottom: 20px; 
+  width: 100%; 
+} 
+
+th, 
+td { 
+  border: 1px solid #ddd; 
+  padding: 8px; 
+  text-align: left; 
+} 
+
+th { 
+  background-color: var(--main-color); 
+  color: #fff; 
+} 
+
+h1 {
+  color: var(--main-color);
+}
+
+legend {
+  font-size: 1.5rem;
+  padding: 20px;
+}
+
+form {
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.3);
+  padding: 20px;
+
+  label {
+    margin: 5px 0 0 0;
+    color: hsl(0, 0%, 20%);
+  }
+
+}

@@ -6,24 +6,21 @@
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- site specific tags -->
-  <title>Lab 08: Forms validation with JavaScript</title>
+  <title>Lab 07</title>
   <!-- style sheets -->
   <link rel="stylesheet" href="css/css-reset.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header>
-    <h1>Lab 08: Forms validation with JavaScript.</h1>
-    <nav>
-      
-    </nav>
+    <h1>Lab 07: Forms and Events</h1>
   </header>
   <main>
     <section>
       <article>
-        <form id="registration_form">
+        <form id="registration_form" method="post" action="/register">
           <fieldset>
-          <legend>Registration Form:</legend>
+          <legend>Registration:</legend>
           <hr>
             <div>
               <label for="firstName">First Name:</label>
@@ -32,6 +29,7 @@
                 id="firstName"
                 name="firstName"
                 required
+                pattern="[a-zA-Z]{2,20}"
                 title="2 to 20 letters" /><span id="firstName_err" class="error"></span>
             </div>
             <div>
@@ -41,6 +39,7 @@
                 id="lastName"
                 name="lastName"
                 required
+                pattern="[a-zA-Z]{2,20}"
                 title="2 to 20 letters" /><span id="lastName_err" class="error"></span>
             </div>
             <div>
@@ -49,17 +48,10 @@
                 type="email"
                 id="email"
                 name="email"
+                required
                 title="An email" /><span id="email_err" class="error"></span>
             </div>
-            <div>
-              <label for="phoneNumber">Phone #:</label>
-              <input
-                type="text"
-                id="phoneNumber"
-                name="phoneNumber"
-                required
-                title="a phone number of 10 to 14 digits" /><span id="phoneNumber_err" class="error"></span>
-            </div>
+            
             <hr>
             <div>
               <label for="address">Address:</label>
@@ -69,7 +61,7 @@
                 name="address"
                 required
                 size="30"
-                pattern="[a-zA-z ]{10,30}"
+                pattern="[a-zA-z]{10,30}"
                 title="Address of no more than 30 characters" /><span id="address_err" class="error"></span>
             </div>
             <div>
@@ -84,56 +76,43 @@
                 title="Address of no more than 30 characters" /><span id="city_err" class="error"></span>
             </div>
             <div>
-              <label for="region">Region:</label>
-              <select name="region" id="region" required>
-                  <option value="1">Mecca</option>
-                  <option value="2" selected>Riyadh</option>
-                  <option value="3">Eastern Region</option>
-                  <option value="4">Asir</option>
-                  <option value="5">Jazan</option>
-                  <option value="6">Medina</option>
-                  <option value="7">Al-Qassim</option>
-                  <option value="8">Tabuk</option>
-                  <option value="9">Ha'il</option>
-                  <option value="10">Najran</option>
-                  <option value="11">Al-Jawf</option>
-                  <option value="12">Al-Bahah</option>
-                  <option value="13">Northern Borders Region</option>
+              <label for="country">Country:</label>
+              <select name="country" id="country" required>
+                  <option value="1" data-code="+966" selected>KSA</option>
+                  <option value="2" data-code="+968">Oman</option>
+                  <option value="3" data-code="+965">Kuwait</option>
+                  <option value="4" data-code="+20">Egypt</option>
+                  <option value="5" data-code="+962">Jordan</option>
+                  <option value="6" data-code="+963">Syria</option>
+                  <option value="7" data-code="+961">Lebanon</option>
               </select>
             </div>
             <div>
-              <label for="zipCode">Zip Code:</label>
+              <label for="phoneNumber">Phone #:</label>
+              <span id="country_code">+966</span>
               <input
                 type="text"
-                id="zipCode"
-                name="zipCode"
+                id="phoneNumber"
+                name="phoneNumber"
                 required
-                pattern="[0-9]{4,6}"
-                title="a zip code of 4 to 6 digits" /><span id="zipCode_err" class="error"></span>
+                pattern="[0-9]{9,11}"
+                title="a phone number of 9 to 11 digits" /><span id="phoneNumber_err" class="error"></span>
             </div>
             <hr>
+            <p>Do you want to become a voting member?</p>
             <div>
-              <label for="website">Website or Domain Name:</label>
-              <input
-                type="url"
-                id="website"
-                name="website"
-                title="a URL" /><span id="website_err" class="error"></span>
-            </div>
-            <p>Do you have hosting?</p>
-            <div>
-              <input type="radio" id="hostingYes" name="hasHosting" value="1" checked>
-              <label class="label_radio" for="hostingYes">Yes</label>
+              <input type="radio" id="votingNo" name="voting" value="0" checked>
+              <label class="label_radio" for="votingNo">No</label>
             </div>
             <div>
-              <input type="radio" id="hostingNo" name="hasHosting" value="2">
-              <label class="label_radio" for="hostingNo">No</label>
+              <input type="radio" id="votingYes" name="voting" value="1">
+              <label class="label_radio" for="votingYes">Yes</label>
             </div>
-            <div>
-              <label for="description">Project Description: </label><br>
+            <div id="motivations_block">
+              <label for="motivations">Tell us about your motivations to become a voting member....</label><br>
               <textarea 
-                id="description" 
-                name="description" 
+                id="motivations" 
+                name="motivations" 
                 rows="4" 
                 cols="50">
               </textarea>

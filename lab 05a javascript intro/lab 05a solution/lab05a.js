@@ -1,6 +1,3 @@
-const msg = "Selem";
-console.log( msg );
-
 /**
  * Q6: parsing the data
  */

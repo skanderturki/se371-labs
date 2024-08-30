@@ -34,7 +34,7 @@ input, textarea, select {
   margin: auto;
   padding: 7px 5px;
   border-radius: 2px;
-  width: 95%;
+  width: 65%;
 }
 
 input[type="submit"], input[type="reset"], button {

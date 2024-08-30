@@ -31,7 +31,6 @@
                 type="text"
                 id="firstName"
                 name="firstName"
-                required
                 title="2 to 20 letters" /><span id="firstName_err" class="error"></span>
             </div>
             <div>
@@ -40,7 +39,6 @@
                 type="text"
                 id="lastName"
                 name="lastName"
-                required
                 title="2 to 20 letters" /><span id="lastName_err" class="error"></span>
             </div>
             <div>
@@ -57,7 +55,6 @@
                 type="text"
                 id="phoneNumber"
                 name="phoneNumber"
-                required
                 title="a phone number of 10 to 14 digits" /><span id="phoneNumber_err" class="error"></span>
             </div>
             <hr>
@@ -136,7 +133,7 @@
                 name="description" 
                 rows="4" 
                 cols="50">
-              </textarea>
+              </textarea><span id="description_err" class="error"></span>
             </div>
             <input type="submit">
             <input type="reset">
